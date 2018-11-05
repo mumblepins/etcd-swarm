@@ -8,8 +8,8 @@ exec /usr/local/bin/etcd \
 	--data-dir=/etcd-data/${NODE_ID} \
 	--name=${NODE_ID} \
 	--initial-advertise-peer-urls=http://${NODE_ID}:2380 \
-	--listen-peer-urls=http://${NODE_ID}:2380 \
-	--listen-client-urls=http://${NODE_ID}:2379,http://localhost:2379 \
+	--listen-peer-urls=http://0.0.0.0:2380 \
+	--listen-client-urls=http://0.0.0.0:2379 \
 	--advertise-client-urls=http://${NODE_ID}:2379 \
 	--initial-cluster-token=${CLUSTER_TOKEN} \
 	--heartbeat-interval=250 \
